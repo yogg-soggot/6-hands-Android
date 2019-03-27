@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".presentation.authscreen.MainActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -17,10 +17,10 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/title_top_margin"
+        android:layout_marginTop="100dp"
         android:text="@string/title"
         android:textColor="@color/auth_text_color"
-        android:textSize="@dimen/title_size"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,13 +28,13 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/description_sides_margin"
-        android:layout_marginTop="@dimen/description_top_margin"
-        android:layout_marginEnd="@dimen/description_sides_margin"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="47dp"
         android:gravity="center_horizontal"
         android:text="@string/description"
         android:textColor="@color/auth_text_color"
-        android:textSize="@dimen/description_size"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
@@ -43,13 +43,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/main_vk_button"
+        android:background="@drawable/auth_vk_button"
         android:gravity="center_horizontal|center_vertical"
-        android:padding="@dimen/auth_button_padding"
-        android:paddingStart="@dimen/auth_button_start_padding"
+        android:padding="16dp"
+        android:paddingStart="68dp"
         android:text="@string/vk_button"
         android:textColor="@color/vk_auth_text_color"
-        android:textSize="@dimen/description_size"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

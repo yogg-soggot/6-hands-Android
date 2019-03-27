@@ -30,6 +30,11 @@ android {
         debug {
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -42,4 +47,20 @@ dependencies {
 
     //Vk SDK
     implementation 'com.vk:androidsdk:2.0.2'
+
+    //Butter Knife
+    implementation 'com.jakewharton:butterknife:9.0.0-rc2'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc2'
+
+    //Moxy
+    implementation 'com.arello-mobile:moxy:1.5.5'
+    annotationProcessor 'com.arello-mobile:moxy-compiler:1.5.5'
+    implementation 'com.arello-mobile:moxy-android:1.5.5'
+    implementation 'com.arello-mobile:moxy-app-compat:1.5.5'
+
+    //Dagger 2
+    implementation 'com.google.dagger:dagger-android:2.19'
+    implementation 'com.google.dagger:dagger-android-support:2.19' // if you use the support libraries
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.19'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.19'
 }
