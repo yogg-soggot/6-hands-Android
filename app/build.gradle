@@ -63,4 +63,7 @@ dependencies {
     implementation 'com.google.dagger:dagger-android-support:2.19' // if you use the support libraries
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.19'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.19'
+
+    //Cicerone
+    implementation 'ru.terrakok.cicerone:cicerone:4.0.2'
 }
