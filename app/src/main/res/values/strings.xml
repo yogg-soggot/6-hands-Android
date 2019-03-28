@@ -5,4 +5,7 @@
     <string name="title">Six Hands</string>
     <string name="description">Сервис для безопасной сдачи и аренды недвижимости</string>
     <string name="vk_button">Войти с помощью Вконтакте</string>
+
+    <!-- fragment_profile -->
+    <string name="change_data">Изменить данные</string>
 </resources>

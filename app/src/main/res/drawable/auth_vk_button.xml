@@ -1,31 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list
-    xmlns:android="http://schemas.android.com/apk/res/android">
 
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:state_pressed="false">
 
     <item android:right="0.1dp" android:top="1.5dp">
         <shape>
-            <solid android:color="#3d000000" />
+            <solid android:color="@color/shadow_color" />
             <corners android:radius="2dp"/>
         </shape>
     </item>
-    <!-- CONTENT LAYER -->
-    <item android:left="0.1dp" android:bottom="1.5dp">
+
+    <item android:left="0.1dp" android:bottom="1.5dp" android:state_pressed="false">
         <shape>
-            <solid android:color="#517298" />
+            <solid android:color="@color/vk_auth_back_color" />
             <corners android:radius="2dp"/>
         </shape>
     </item>
 
     <item android:left="13.5dp">
-        <bitmap android:src="@drawable/vk_logo"
-            android:gravity="center_vertical|left"/>
+        <bitmap android:src="@drawable/vk_logo" android:gravity="center_vertical|left"/>
     </item>
 
     <item android:left="50dp" android:bottom="1.5dp" android:gravity="left">
         <shape android:shape="rectangle" >
-            <stroke android:width="0.5dp" android:color="#435f7e" />
+            <stroke android:width="0.5dp" android:color="@color/vk_auth_divider_color" />
             <size android:width="1dp" />
         </shape>
     </item>
+
+    <item>
+        <selector>
+            <item android:left="0.1dp" android:bottom="1.5dp" android:state_pressed="false">
+                <shape>
+                    <solid android:color="@android:color/transparent" />
+                    <corners android:radius="2dp"/>
+                </shape>
+            </item>
+
+            <item android:left="0.1dp" android:bottom="1.5dp" android:state_pressed="true">
+                <shape>
+                    <solid android:color="@color/vk_auth_pressed_color" />
+                    <corners android:radius="2dp"/>
+                </shape>
+            </item>
+        </selector>
+    </item>
+
 </layer-list>
