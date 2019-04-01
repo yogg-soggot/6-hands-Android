@@ -9,6 +9,7 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
 
 import org.styleru.the6hands.R;
+import org.styleru.the6hands.Screens;
 import org.styleru.the6hands.SixHandsApplication;
 import org.styleru.the6hands.presentation.profile.ProfileFragment;
 
@@ -40,7 +41,7 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
         SixHandsApplication.getAppComponent().inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mainPresenter.onStart();
+        mainPresenter.onStart(getIntent().getExtras().getParcelable(Screens.ProfileScreen.USER_KEY));
     }
 
     @Override

@@ -11,4 +11,10 @@ public interface AuthView extends MvpView {
 
     @StateStrategyType(AddToEndSingleStrategy.class)
     void showMessage(String message);
+
+    @StateStrategyType(AddToEndSingleStrategy.class)
+    void showButton();
+
+    @StateStrategyType(AddToEndSingleStrategy.class)
+    void hideButton();
 }

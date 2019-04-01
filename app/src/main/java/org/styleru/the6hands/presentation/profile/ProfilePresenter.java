@@ -14,7 +14,4 @@ public class ProfilePresenter extends MvpPresenter<ProfileView> {
 
     }
 
-    void onStart(){
-        getViewState().setProfileName("Name");
-    }
 }

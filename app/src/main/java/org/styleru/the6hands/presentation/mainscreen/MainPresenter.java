@@ -1,9 +1,12 @@
 package org.styleru.the6hands.presentation.mainscreen;
 
+import android.os.Parcelable;
+
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 
 import org.styleru.the6hands.Screens;
+import org.styleru.the6hands.domain.entities.User;
 
 import javax.inject.Inject;
 
@@ -19,7 +22,7 @@ public class MainPresenter extends MvpPresenter<MainView> {
         this.router = router;
     }
 
-    void onStart(){
-        router.replaceScreen(new Screens.ProfileScreen());
+    void onStart(Parcelable user){
+        router.replaceScreen(new Screens.ProfileScreen(user));
     }
 }

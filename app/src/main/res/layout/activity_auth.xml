@@ -43,6 +43,7 @@
         android:id="@+id/vk_auth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         android:layout_marginBottom="20dp"
         android:background="@drawable/auth_vk_button"
         android:gravity="center_horizontal|center_vertical"
@@ -52,6 +53,17 @@
         android:textColor="@color/vk_auth_text_color"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ProgressBar
+        android:id="@+id/auth_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:indeterminate="true"
+        app:layout_constraintTop_toTopOf="@id/vk_auth"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
