@@ -10,13 +10,11 @@ import org.styleru.the6hands.domain.repository.IUserRepository;
 
 import javax.inject.Inject;
 
-import io.reactivex.MaybeObserver;
+import io.reactivex.Maybe;
 import io.reactivex.Single;
-import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import io.realm.Realm;
-import io.realm.RealmObject;
 
 public class UserRepository implements IUserRepository {
 
@@ -27,10 +25,10 @@ public class UserRepository implements IUserRepository {
     }
 
     @Override
-    public void getUserFromDB(MaybeObserver<User> observer) {
+    public Maybe<User> getUserFromDB() {
         Realm realm = Realm.getDefaultInstance();
         Log.e("DB test", "" + realm.where(User.class).findAll().size());
-        realm.where(User.class)
+        Maybe<User> userMaybe = realm.where(User.class)
                 .findFirstAsync()
                 .<User>asFlowable()
                 .firstElement()
@@ -38,14 +36,14 @@ public class UserRepository implements IUserRepository {
                     user.load();
                     return user;
                 })
-                .map(realm::copyFromRealm)
-                .subscribe(observer);
+                .map(realm::copyFromRealm);
         realm.close();
+        return userMaybe;
     }
 
     @Override
-    public void getUserFromVk(SingleObserver<User> observer) {
-        Single.fromCallable(() -> VK.executeSync(new VkUserRequest()))
+    public Single<User> getUserFromVk() {
+       return Single.fromCallable(() -> VK.executeSync(new VkUserRequest()))
                 .subscribeOn(Schedulers.io())
                 .map(user -> {
                     Realm realm = Realm.getDefaultInstance();
@@ -55,7 +53,6 @@ public class UserRepository implements IUserRepository {
                     realm.close();
                     return user;
                 })
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(observer);
+                .observeOn(AndroidSchedulers.mainThread());
     }
 }

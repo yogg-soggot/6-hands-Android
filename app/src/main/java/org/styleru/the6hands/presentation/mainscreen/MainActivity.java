@@ -3,7 +3,6 @@ package org.styleru.the6hands.presentation.mainscreen;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
@@ -11,7 +10,6 @@ import com.arellomobile.mvp.presenter.ProvidePresenter;
 import org.styleru.the6hands.R;
 import org.styleru.the6hands.Screens;
 import org.styleru.the6hands.SixHandsApplication;
-import org.styleru.the6hands.presentation.profile.ProfileFragment;
 
 import javax.inject.Inject;
 

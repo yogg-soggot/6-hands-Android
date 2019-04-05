@@ -5,8 +5,8 @@ import org.styleru.the6hands.domain.repository.IUserRepository;
 
 import javax.inject.Inject;
 
-import io.reactivex.MaybeObserver;
-import io.reactivex.SingleObserver;
+import io.reactivex.Maybe;
+import io.reactivex.Single;
 
 public class UserInfoInteractor {
 
@@ -17,12 +17,12 @@ public class UserInfoInteractor {
         this.userRepository = userRepository;
     }
 
-    public void getUserFromDb(MaybeObserver<User> observer){
-        userRepository.getUserFromDB(observer);
+    public Maybe<User> getUserFromDb(){
+        return userRepository.getUserFromDB();
     }
 
-    public void getUserFromVk(SingleObserver<User> observer){
-        userRepository.getUserFromVk(observer);
+    public Single<User> getUserFromVk(){
+        return userRepository.getUserFromVk();
     }
 
 }
