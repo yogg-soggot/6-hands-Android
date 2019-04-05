@@ -52,6 +52,7 @@ public class AuthPresenter extends MvpPresenter<AuthView> {
                 .subscribe(
                         user -> router.newRootScreen(new Screens.MainScreen(user)),
                         e ->{
+                            getViewState().showButton();
                             getViewState().showMessage("Error while loading user");
                             Log.e("VK Error", Log.getStackTraceString(e));
                         });

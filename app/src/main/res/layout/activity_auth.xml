@@ -9,9 +9,13 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:foreground="@color/auth_screen_background"
         android:scaleType="centerCrop"
         android:src="@drawable/flat" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/auth_screen_background" />
 
     <TextView
         android:id="@+id/title"
@@ -54,7 +58,8 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="RtlSymmetry" />
 
 
     <ProgressBar

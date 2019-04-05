@@ -28,7 +28,7 @@ public class UserRepository implements IUserRepository {
     public Maybe<User> getUserFromDB() {
         Realm realm = Realm.getDefaultInstance();
         Log.e("DB test", "" + realm.where(User.class).findAll().size());
-        Maybe<User> userMaybe = realm.where(User.class)
+        return realm.where(User.class)
                 .findFirstAsync()
                 .<User>asFlowable()
                 .firstElement()
@@ -36,9 +36,12 @@ public class UserRepository implements IUserRepository {
                     user.load();
                     return user;
                 })
-                .map(realm::copyFromRealm);
-        realm.close();
-        return userMaybe;
+                .map(realm::copyFromRealm)
+                .map(user -> {
+                    realm.close();
+                    return user;
+                });
+
     }
 
     @Override
