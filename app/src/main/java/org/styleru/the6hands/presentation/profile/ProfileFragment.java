@@ -13,8 +13,8 @@ import android.widget.Toast;
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
+import com.bumptech.glide.Glide;
 import com.mikhaellopez.circularimageview.CircularImageView;
-import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 import org.styleru.the6hands.R;
@@ -58,7 +58,7 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileView
         ButterKnife.bind(this, view);
         User user = Parcels.unwrap(getArguments().getParcelable(Screens.ProfileScreen.USER_KEY));
         name.setText(user.getFirstName());
-        Picasso.get().load(user.getPhoto200Url()).into(profilePic);
+        Glide.with(this).load(user.getPhoto200Url()).into(profilePic);
         return view;
     }
 
