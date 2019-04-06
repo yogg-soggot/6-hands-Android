@@ -58,6 +58,7 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
         mainPresenter.onStart(getIntent().getExtras().getParcelable(Screens.ProfileScreen.USER_KEY));
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        //Проблема не в привязке View, а в привязке listener. Кидает NPE
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
     }
