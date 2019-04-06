@@ -8,4 +8,6 @@ public interface MainView extends MvpView {
 
     @StateStrategyType(AddToEndSingleStrategy.class)
     void showMessage(String message);
+    @StateStrategyType(AddToEndSingleStrategy.class)
+    void setChecked(int id);
 }
