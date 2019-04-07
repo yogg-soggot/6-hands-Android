@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">6 hands</string>
+
+    <!-- activity_auth -->
+    <string name="title">Six Hands</string>
+    <string name="description">Сервис для безопасной сдачи и аренды недвижимости</string>
+    <string name="vk_button">Войти с помощью Вконтакте</string>
+
+
+    <!--activity_main-->
+
+    <string name="nav_profile_title">Профиль</string>
+    <string name="nav_list_title">Список</string>
+    <string name="nav_map_title">Карта</string>
+
+    <!-- fragment_profile -->
+    <string name="change_data">Изменить данные</string>
+    <string name="nav_dialog_title">Связь</string>
 </resources>
