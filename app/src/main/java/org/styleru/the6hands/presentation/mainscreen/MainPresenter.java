@@ -7,7 +7,6 @@ import com.arellomobile.mvp.MvpPresenter;
 
 import org.styleru.the6hands.R;
 import org.styleru.the6hands.Screens;
-import org.styleru.the6hands.domain.entities.User;
 
 import javax.inject.Inject;
 
@@ -30,7 +29,7 @@ public class MainPresenter extends MvpPresenter<MainView> {
 
 
     //Place navigation here
-    public boolean onNavClicked(int id){
+    boolean onNavClicked(int id){
         switch (id) {
             case R.id.nav_list:
                 getViewState().showMessage("Здесь пока ничего нет");

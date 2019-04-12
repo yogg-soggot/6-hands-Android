@@ -16,7 +16,8 @@ import org.styleru.the6hands.SixHandsApplication;
 
 import javax.inject.Inject;
 
-// Не работает на BnBar, хз почему ¯\_(ツ)_/¯ import butterknife.BindView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import ru.terrakok.cicerone.Navigator;
 import ru.terrakok.cicerone.NavigatorHolder;
 import ru.terrakok.cicerone.android.support.SupportAppNavigator;
@@ -31,10 +32,11 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
     @Inject
     NavigatorHolder navigatorHolder;
 
+    @BindView(R.id.bottom_navigation)
+    BottomNavigationView bottomNavigationView;
+
     private Navigator navigator = new SupportAppNavigator(this, R.id.main_container);
 
-    //@BindView(R.id.bottom_navigation) !!!НЕ РАБОТАЕТ DOESN'T WORK!!!
-    private BottomNavigationView bottomNavigationView;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -55,10 +57,8 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
         SixHandsApplication.getAppComponent().inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         mainPresenter.onStart(getIntent().getExtras().getParcelable(Screens.ProfileScreen.USER_KEY));
-
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
-        //Проблема не в привязке View, а в привязке listener. Кидает NPE
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
     }
