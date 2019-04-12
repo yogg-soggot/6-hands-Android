@@ -11,7 +11,6 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
 
 import org.styleru.the6hands.R;
-import org.styleru.the6hands.Screens;
 import org.styleru.the6hands.SixHandsApplication;
 
 import javax.inject.Inject;
@@ -58,9 +57,8 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mainPresenter.onStart(getIntent().getExtras().getParcelable(Screens.ProfileScreen.USER_KEY));
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
+        bottomNavigationView.setSelectedItemId(R.id.nav_profile);
     }
 
     @Override
@@ -78,13 +76,5 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
     @Override
     public void showMessage(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-
-    //Needed to highlight bottom navigation item
-    //Use this method any time you change screen without clicking on bottom navigation bar
-    @Override
-    public void setChecked(int id){
-        bottomNavigationView.getMenu().findItem(id).setChecked(true);
     }
 }

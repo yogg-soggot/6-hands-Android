@@ -19,7 +19,7 @@
         android:layout_marginStart="@dimen/profile_sides_margin"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Анатолий"/>
+        android:text="@string/unauthorized_name"/>
 
     <TextView
         android:id="@+id/change_profile_data"

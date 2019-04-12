@@ -2,19 +2,12 @@ package org.styleru.the6hands.domain.entities;
 
 import org.parceler.Parcel;
 
-import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
+@Parcel(Parcel.Serialization.BEAN)
+public class User {
 
-@Parcel
-public class User extends RealmObject {
-
-    @PrimaryKey
     private long id;
 
     private String firstName, photo200Url;
-
-    public User() {
-    }
 
     public User(long id, String firstName, String photo200Url) {
         this.id = id;

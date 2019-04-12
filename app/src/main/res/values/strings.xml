@@ -16,4 +16,5 @@
     <!-- fragment_profile -->
     <string name="change_data">Изменить данные</string>
     <string name="nav_dialog_title">Связь</string>
+    <string name="unauthorized_name">Anonymous</string>
 </resources>

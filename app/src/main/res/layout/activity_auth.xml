@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/flat" />
+        android:src="@drawable/flat"
+        tools:ignore="ContentDescription" />
 
     <View
         android:layout_width="match_parent"
@@ -47,7 +48,6 @@
         android:id="@+id/vk_auth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
         android:layout_marginBottom="20dp"
         android:background="@drawable/auth_vk_button"
         android:gravity="center_horizontal|center_vertical"
@@ -56,6 +56,7 @@
         android:text="@string/vk_button"
         android:textColor="@color/vk_auth_text_color"
         android:textSize="18sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,11 +67,11 @@
         android:id="@+id/auth_loader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
         android:indeterminate="true"
-        app:layout_constraintTop_toTopOf="@id/vk_auth"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/vk_auth" />
 
 
 </android.support.constraint.ConstraintLayout>

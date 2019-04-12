@@ -5,7 +5,6 @@ import org.styleru.the6hands.domain.repository.IUserRepository;
 
 import javax.inject.Inject;
 
-import io.reactivex.Maybe;
 import io.reactivex.Single;
 
 public class UserInfoInteractor {
@@ -13,16 +12,11 @@ public class UserInfoInteractor {
     private IUserRepository userRepository;
 
     @Inject
-    public UserInfoInteractor(IUserRepository userRepository) {
+    UserInfoInteractor(IUserRepository userRepository) {
         this.userRepository = userRepository;
-    }
-
-    public Maybe<User> getUserFromDb(){
-        return userRepository.getUserFromDB();
     }
 
     public Single<User> getUserFromVk(){
         return userRepository.getUserFromVk();
     }
-
 }

@@ -2,19 +2,16 @@ package org.styleru.the6hands.presentation.authscreen;
 
 import com.arellomobile.mvp.MvpView;
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy;
-import com.arellomobile.mvp.viewstate.strategy.SingleStateStrategy;
+import com.arellomobile.mvp.viewstate.strategy.OneExecutionStateStrategy;
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
 
 public interface AuthView extends MvpView {
-    @StateStrategyType(SingleStateStrategy.class)
+    @StateStrategyType(OneExecutionStateStrategy.class)
     void vkAuth();
 
-    @StateStrategyType(AddToEndSingleStrategy.class)
+    @StateStrategyType(OneExecutionStateStrategy.class)
     void showMessage(String message);
 
     @StateStrategyType(AddToEndSingleStrategy.class)
-    void showButton();
-
-    @StateStrategyType(AddToEndSingleStrategy.class)
-    void hideButton();
+    void setLoadingVisibility(Boolean visible);
 }
