@@ -16,9 +16,7 @@ import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.bumptech.glide.Glide;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
-import org.parceler.Parcels;
 import org.styleru.the6hands.R;
-import org.styleru.the6hands.Screens;
 import org.styleru.the6hands.SixHandsApplication;
 import org.styleru.the6hands.domain.entities.User;
 
@@ -56,20 +54,18 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileView
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this, view);
-        User user = Parcels.unwrap(getArguments().getParcelable(Screens.ProfileScreen.USER_KEY));
+        return view;
+    }
+
+    @Override
+    public void setUser(User user) {
         name.setText(user.getFirstName());
         Glide.with(this).load(user.getPhoto200Url()).into(profilePic);
-        return view;
     }
 
     @OnClick(R.id.change_profile_data)
     void onChangeDataClicked(){
 
-    }
-
-    @Override
-    public void setProfileName(String name) {
-        this.name.setText(name);
     }
 
     @Override

@@ -5,7 +5,6 @@ import android.app.Application;
 import org.styleru.the6hands.dagger.AppComponent;
 import org.styleru.the6hands.dagger.DaggerAppComponent;
 
-import io.realm.Realm;
 
 public class SixHandsApplication extends Application {
 
@@ -13,7 +12,6 @@ public class SixHandsApplication extends Application {
 
     @Override
     public void onCreate() {
-        Realm.init(getApplicationContext());
         appComponent = DaggerAppComponent.builder()
                 .build();
         super.onCreate();

@@ -1,8 +1,8 @@
 package org.styleru.the6hands.presentation.authscreen;
 
 import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -103,17 +103,15 @@ public class AuthActivity extends MvpAppCompatActivity implements AuthView {
     }
 
     @Override
-    public void showButton() {
-        progressBar.setVisibility(View.INVISIBLE);
-        vkAuth.setVisibility(View.VISIBLE);
+    public void setLoadingVisibility(Boolean visible) {
+        if (visible) {
+            vkAuth.setVisibility(View.INVISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            vkAuth.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.GONE);
+        }
     }
-
-    @Override
-    public void hideButton() {
-        vkAuth.setVisibility(View.INVISIBLE);
-        progressBar.setVisibility(View.VISIBLE);
-    }
-
 
     @OnClick(R.id.vk_auth)
     void onClickVkAuth(){

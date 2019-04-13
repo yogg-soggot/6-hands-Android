@@ -1,7 +1,5 @@
 package org.styleru.the6hands.presentation.mainscreen;
 
-import android.os.Parcelable;
-
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 
@@ -22,12 +20,6 @@ public class MainPresenter extends MvpPresenter<MainView> {
         this.router = router;
     }
 
-    void onStart(Parcelable user){
-        router.replaceScreen(new Screens.ProfileScreen(user));
-        getViewState().setChecked(R.id.nav_profile);
-    }
-
-
     //Place navigation here
     boolean onNavClicked(int id){
         switch (id) {
@@ -41,7 +33,7 @@ public class MainPresenter extends MvpPresenter<MainView> {
                 getViewState().showMessage("Здесь пока ничего нет");
                 return true;
             case R.id.nav_profile:
-                getViewState().showMessage("Здесь пока ничего нет");
+                router.newRootScreen(new Screens.ProfileScreen());
                 return true;
         }
         return false;
