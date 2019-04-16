@@ -2,4 +2,7 @@
 <resources>
     <!-- fragment_profile -->
     <dimen name="profile_sides_margin">16dp</dimen>
+    <dimen name="vk_button_size">48dp</dimen>
+    <dimen name="big_circle_size">12dp</dimen>
+    <dimen name="lil_circle_size">3dp</dimen>
 </resources>

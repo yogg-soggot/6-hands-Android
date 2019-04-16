@@ -13,5 +13,5 @@ public interface AuthView extends MvpView {
     void showMessage(String message);
 
     @StateStrategyType(AddToEndSingleStrategy.class)
-    void setLoadingVisibility(Boolean visible);
+    void setLoadingVisibility(boolean visible);
 }

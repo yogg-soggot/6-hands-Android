@@ -10,9 +10,9 @@
         </shape>
     </item>
 
-    <item android:left="0.1dp" android:bottom="1.5dp" android:state_pressed="false">
+    <item android:left="0.1dp" android:bottom="1.5dp">
         <shape>
-            <solid android:color="@color/vk_auth_back_color" />
+            <solid android:color="@color/vk_back_color" />
             <corners android:radius="2dp"/>
         </shape>
     </item>
@@ -23,7 +23,7 @@
 
     <item android:left="50dp" android:bottom="1.5dp" android:gravity="left">
         <shape android:shape="rectangle" >
-            <stroke android:width="0.5dp" android:color="@color/vk_auth_divider_color" />
+            <stroke android:width="0.5dp" android:color="@color/vk_divider_color" />
             <size android:width="1dp" />
         </shape>
     </item>
@@ -39,7 +39,7 @@
 
             <item android:left="0.1dp" android:bottom="1.5dp" android:state_pressed="true">
                 <shape>
-                    <solid android:color="@color/vk_auth_pressed_color" />
+                    <solid android:color="@color/vk_pressed_color" />
                     <corners android:radius="2dp"/>
                 </shape>
             </item>

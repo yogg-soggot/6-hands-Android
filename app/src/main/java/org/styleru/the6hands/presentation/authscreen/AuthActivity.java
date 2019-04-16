@@ -103,7 +103,7 @@ public class AuthActivity extends MvpAppCompatActivity implements AuthView {
     }
 
     @Override
-    public void setLoadingVisibility(Boolean visible) {
+    public void setLoadingVisibility(boolean visible) {
         if (visible) {
             vkAuth.setVisibility(View.INVISIBLE);
             progressBar.setVisibility(View.VISIBLE);

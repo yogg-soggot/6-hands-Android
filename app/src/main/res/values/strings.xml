@@ -17,4 +17,7 @@
     <string name="change_data">Изменить данные</string>
     <string name="nav_dialog_title">Связь</string>
     <string name="unauthorized_name">Anonymous</string>
+    <string name="edit">Редактировать</string>
+    <string name="views">Просмотров:</string>
+    <string name="new_views">Новых:</string>
 </resources>
