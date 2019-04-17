@@ -41,7 +41,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <View
-                android:id="@+id/subway_line"
+                android:id="@+id/subway_line_color"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:layout_marginStart="8dp"
@@ -62,10 +62,10 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@id/divider"
-                app:layout_constraintStart_toEndOf="@+id/subway_line" />
+                app:layout_constraintStart_toEndOf="@+id/subway_line_color" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/image_clock"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="16dp"
@@ -75,7 +75,7 @@
                 app:srcCompat="@drawable/ic_access_time_black_24dp" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/text_arrive_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -85,15 +85,15 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@id/divider"
-                app:layout_constraintStart_toEndOf="@+id/imageView" />
+                app:layout_constraintStart_toEndOf="@+id/image_clock" />
 
             <View
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginTop="64dp"
+                android:layout_marginEnd="8dp"
                 android:background="?android:attr/listDivider"
                 app:layout_constraintTop_toBottomOf="@+id/apartment_address" />
 
@@ -101,78 +101,85 @@
                 android:id="@+id/divider2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="72dp"
+                android:layout_marginTop="84dp"
                 android:background="?android:attr/listDivider"
                 app:layout_constraintTop_toBottomOf="@+id/divider"
                 tools:layout_editor_absoluteX="0dp" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/image_rooms_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView2"
-                app:layout_constraintEnd_toStartOf="@+id/imageView3"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"
+                app:layout_constraintBottom_toTopOf="@+id/text_rooms_number"
+                app:layout_constraintEnd_toEndOf="@+id/text_rooms_number"
+                app:layout_constraintStart_toStartOf="@+id/text_rooms_number"
                 app:layout_constraintTop_toBottomOf="@+id/divider"
+                app:layout_constraintVertical_bias="0.55"
                 app:srcCompat="@drawable/ic_door" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/image_apartment_area"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"
+                app:layout_constraintBottom_toTopOf="@+id/text_apartment_area"
+                app:layout_constraintEnd_toEndOf="@+id/text_apartment_area"
+                app:layout_constraintStart_toStartOf="@+id/text_apartment_area"
                 app:layout_constraintTop_toBottomOf="@+id/divider"
                 app:srcCompat="@drawable/ic_arrows" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/image_floor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                android:layout_marginTop="12dp"
+                app:layout_constraintBottom_toTopOf="@id/text_floor"
+                app:layout_constraintEnd_toEndOf="@+id/text_floor"
+                app:layout_constraintStart_toStartOf="@+id/text_floor"
                 app:layout_constraintTop_toBottomOf="@+id/divider"
                 app:srcCompat="@drawable/ic_floor" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/text_rooms_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
                 android:fontFamily="@font/lato"
-                android:text="1 ком"
+                android:text="1 ком."
+                android:textSize="12sp"
                 app:layout_constraintBottom_toTopOf="@+id/divider2"
-                app:layout_constraintEnd_toStartOf="@+id/textView3"
+                app:layout_constraintEnd_toStartOf="@+id/text_apartment_area"
+                app:layout_constraintHorizontal_bias="0.4"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/image_rooms_number" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/text_apartment_area"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
                 android:fontFamily="@font/lato"
                 android:text="100 м. кв."
+                android:textSize="12sp"
                 app:layout_constraintBottom_toTopOf="@+id/divider2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/image_apartment_area" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/text_floor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
                 android:fontFamily="@font/lato"
                 android:text="3 этаж (из 17)"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toTopOf="@+id/divider2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView3"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintStart_toEndOf="@+id/text_apartment_area"
+                app:layout_constraintTop_toBottomOf="@+id/image_floor" />
 
 
         </android.support.constraint.ConstraintLayout>
