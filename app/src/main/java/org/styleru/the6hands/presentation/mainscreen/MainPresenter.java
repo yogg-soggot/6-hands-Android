@@ -24,7 +24,9 @@ public class MainPresenter extends MvpPresenter<MainView> {
     boolean onNavClicked(int id){
         switch (id) {
             case R.id.nav_list:
-                getViewState().showMessage("Здесь пока ничего нет");
+                /*getViewState().showMessage("Здесь пока ничего нет");*/
+                //Temporary
+                router.navigateTo(new Screens.ApartmentScreen());
                 return true;
             case R.id.nav_map:
                 getViewState().showMessage("Здесь пока ничего нет");

@@ -1,6 +1,7 @@
 package org.styleru.the6hands.domain.entities;
 
 import org.parceler.Parcel;
+import org.parceler.ParcelConstructor;
 
 @Parcel(Parcel.Serialization.BEAN)
 public class User {
@@ -9,6 +10,7 @@ public class User {
 
     private String firstName, photo200Url;
 
+    @ParcelConstructor
     public User(long id, String firstName, String photo200Url) {
         this.id = id;
         this.firstName = firstName;

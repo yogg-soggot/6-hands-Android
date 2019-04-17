@@ -17,4 +17,7 @@
     <string name="change_data">Изменить данные</string>
     <string name="nav_dialog_title">Связь</string>
     <string name="unauthorized_name">Anonymous</string>
+    <string name="toolbar_add_to_fav_title">Добавить в избранное</string>
+
+
 </resources>
