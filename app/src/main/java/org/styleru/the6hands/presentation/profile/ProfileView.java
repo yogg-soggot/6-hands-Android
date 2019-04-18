@@ -13,4 +13,7 @@ public interface ProfileView extends MvpView {
 
     @StateStrategyType(OneExecutionStateStrategy.class)
     void showMessage(String message);
+
+    @StateStrategyType(OneExecutionStateStrategy.class)
+    void openLink(String link);
 }
