@@ -28,7 +28,7 @@
                 android:id="@+id/apartment_address"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="sans-serif"
@@ -41,61 +41,63 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
             <View
                 android:id="@+id/subway_line_color"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="26dp"
+                android:layout_marginStart="16dp"
                 android:background="@drawable/circle"
-                app:layout_constraintBottom_toBottomOf="@id/divider"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintBottom_toBottomOf="@+id/text_station"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/text_station" />
 
             <TextView
                 android:id="@+id/text_station"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
                 android:fontFamily="@font/lato"
                 android:text="Библиотека имени Ленина"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@id/divider"
-                app:layout_constraintStart_toEndOf="@+id/subway_line_color" />
+                app:layout_constraintEnd_toStartOf="@+id/image_clock"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/subway_line_color"
+                app:layout_constraintTop_toBottomOf="@+id/apartment_address" />
 
             <ImageView
                 android:id="@+id/image_clock"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginBottom="24dp"
-                app:layout_constraintBottom_toBottomOf="@id/divider"
-                app:layout_constraintStart_toEndOf="@+id/text_station"
+                android:layout_marginEnd="6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/text_station"
+                app:layout_constraintEnd_toStartOf="@+id/text_arrive_time"
+                app:layout_constraintTop_toTopOf="@+id/text_station"
                 app:srcCompat="@drawable/ic_access_time_black_24dp" />
 
             <TextView
                 android:id="@+id/text_arrive_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/lato"
                 android:text="10 мин."
                 android:textColor="#000000"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@id/divider"
-                app:layout_constraintStart_toEndOf="@+id/image_clock" />
+                app:layout_constraintBottom_toBottomOf="@+id/text_station"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/text_station" />
 
             <View
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="64dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="24dp"
                 android:background="?android:attr/listDivider"
-                app:layout_constraintTop_toBottomOf="@+id/apartment_address" />
+                app:layout_constraintTop_toBottomOf="@+id/text_station" />
 
             <View
                 android:id="@+id/divider2"
@@ -200,7 +202,7 @@
                 android:id="@+id/image_friends"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="@id/divider3"
                 app:layout_constraintStart_toStartOf="parent"
@@ -221,14 +223,12 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
                 android:fontFamily="@font/lato"
                 android:text="Светлана Олегова"
                 android:textColor="#55c5b7"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/image_friends"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -236,11 +236,12 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto_medium"
                 android:text="Хозяин"
                 android:textColor="@android:color/black"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/textView2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider2" />
@@ -259,7 +260,7 @@
                 android:id="@+id/about_apartment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto_medium"
                 android:text="Об этом жилье"
@@ -272,9 +273,9 @@
                 android:id="@+id/apartment_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="16dp"
                 android:fontFamily="@font/lato"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
@@ -287,7 +288,7 @@
                 android:id="@+id/full_please"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:fontFamily="@font/lato"
                 android:text="Показать полностью..."
                 android:textColor="#55c5b7 "
