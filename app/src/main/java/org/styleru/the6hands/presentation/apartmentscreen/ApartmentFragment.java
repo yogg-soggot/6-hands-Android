@@ -113,7 +113,7 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
     public void onDescriptionClicked(){
         if (needToExpand) {
             animation = ObjectAnimator.ofInt(apartmentDescription, "maxLines", apartmentDescription.getLineCount());
-            animation.setDuration(100).start();
+            animation.setDuration(200).start();
             fullPlease.setVisibility(View.GONE);
             needToExpand = false;
         }
