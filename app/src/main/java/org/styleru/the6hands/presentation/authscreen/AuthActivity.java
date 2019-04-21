@@ -3,9 +3,6 @@ package org.styleru.the6hands.presentation.authscreen;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
@@ -21,7 +18,6 @@ import org.styleru.the6hands.SixHandsApplication;
 
 import javax.inject.Inject;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import ru.terrakok.cicerone.Navigator;
@@ -37,12 +33,6 @@ public class AuthActivity extends MvpAppCompatActivity implements AuthView {
 
     @Inject
     NavigatorHolder navigatorHolder;
-
-    @BindView(R.id.vk_auth)
-    TextView vkAuth;
-
-    @BindView(R.id.auth_loader)
-    ProgressBar progressBar;
 
     private Navigator navigator = new SupportAppNavigator(this, -1);
 
@@ -102,19 +92,13 @@ public class AuthActivity extends MvpAppCompatActivity implements AuthView {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    public void setLoadingVisibility(boolean visible) {
-        if (visible) {
-            vkAuth.setVisibility(View.INVISIBLE);
-            progressBar.setVisibility(View.VISIBLE);
-        } else {
-            vkAuth.setVisibility(View.VISIBLE);
-            progressBar.setVisibility(View.GONE);
-        }
-    }
-
     @OnClick(R.id.vk_auth)
     void onClickVkAuth(){
         authPresenter.onClickVkAuth();
+    }
+
+    @OnClick(R.id.skip_auth)
+    void onClickSkipAuth(){
+        authPresenter.onClickSkipAuth();
     }
 }

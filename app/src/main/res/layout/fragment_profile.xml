@@ -68,7 +68,7 @@
                 android:id="@+id/profile_pic"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
-                android:src="@drawable/flat"
+                android:src="@drawable/anon"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="@dimen/profile_sides_margin"
                 android:scaleType="centerCrop"
@@ -92,10 +92,10 @@
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_my_flat" />
+        tools:listitem="@layout/item_my_apartment" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_flat"
+        android:id="@+id/add_apartment"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_gravity="bottom|end"

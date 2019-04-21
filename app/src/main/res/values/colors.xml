@@ -14,12 +14,14 @@
     <color name="vk_back_color">#517298</color>
     <color name="vk_divider_color">#435f7e</color>
     <color name="vk_pressed_color">#2D3A506B</color>
+    <color name="skip_auth_color">#8affffff</color>
+    <color name="skip_auth_color_pressed">#8A8D8D8D</color>
     
     <!-- item_profile -->
     <color name="profile_text_color">#b3000000</color>
     <color name="profile_pressed_text_color">#7A000000</color>
-    <!-- item my_flat -->
-    <color name="flat_card_background">#ffffcc</color>
+    <!-- item my_apartment -->
+    <color name="apartment_card_background">#ffffcc</color>
     <color name="edit_text_color">#ffffff</color>
     <color name="edit_text_pressed_color">#A7A7A7</color>
     <color name="new_views_color">#55c5b7</color>

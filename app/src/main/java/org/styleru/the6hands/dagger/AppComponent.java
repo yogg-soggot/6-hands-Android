@@ -10,7 +10,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 @Singleton
-@Component(modules = {NavigationModule.class, RepositoryModule.class})
+@Component(modules = {NavigationModule.class, RepositoryModule.class, NetworkModule.class})
 public interface AppComponent {
 
     void inject(AuthActivity authActivity);
