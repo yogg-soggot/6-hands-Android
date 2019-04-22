@@ -2,20 +2,29 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#263238</color>
-    <color name="colorAccent">#3F51B5</color>
+    <color name="colorAccent">#55c5b7</color>
+    <color name="background">#e2e2e2</color>
+
 
     <!-- activity_auth -->
     <color name="auth_screen_background">#a1000000</color>
     <color name="auth_text_color">#ede6d3</color>
     <color name="vk_auth_text_color">#b8ffffff</color>
     <color name="shadow_color">#3d000000</color>
-    <color name="vk_auth_back_color">#517298</color>
-    <color name="vk_auth_divider_color">#435f7e</color>
-    <color name="vk_auth_pressed_color">#2D3A506B</color>
+    <color name="vk_back_color">#517298</color>
+    <color name="vk_divider_color">#435f7e</color>
+    <color name="vk_pressed_color">#2D3A506B</color>
+    <color name="skip_auth_color">#8affffff</color>
+    <color name="skip_auth_color_pressed">#8A8D8D8D</color>
     
-    <!-- fragment_profile -->
+    <!-- item_profile -->
     <color name="profile_text_color">#b3000000</color>
     <color name="profile_pressed_text_color">#7A000000</color>
+    <!-- item my_apartment -->
+    <color name="apartment_card_background">#ffffcc</color>
+    <color name="edit_text_color">#ffffff</color>
+    <color name="edit_text_pressed_color">#A7A7A7</color>
+    <color name="new_views_color">#55c5b7</color>
 
     <!--fragment_apartment-->
     <color name="metro1_sokolnicheskaya">#EB1B35</color>
@@ -30,4 +39,5 @@
     <color name="metro10_lyublinskaya">#B3D445</color>
     <color name="metro11_kahovskaya">#79CDCD</color>
     <color name="metro12_butovskaya">#ABBEFF</color>
+
 </resources>

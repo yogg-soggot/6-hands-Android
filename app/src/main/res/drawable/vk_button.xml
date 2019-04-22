@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/vk_back_color"/>
+            <size android:height="@dimen/vk_button_size" android:width="@dimen/vk_button_size"/>
+        </shape>
+    </item>
+
+    <item>
+        <bitmap android:src="@drawable/vk_logo" android:gravity="center"/>
+    </item>
+
+    <item>
+        <selector>
+            <item android:state_pressed="false">
+                <shape android:shape="oval">
+                    <solid android:color="@android:color/transparent"/>
+                    <size android:height="@dimen/vk_button_size" android:width="@dimen/vk_button_size"/>
+                </shape>
+            </item>
+
+            <item android:state_pressed="true">
+                <shape android:shape="oval">
+                    <solid android:color="@color/vk_pressed_color"/>
+                    <size android:height="@dimen/vk_button_size" android:width="@dimen/vk_button_size"/>
+                </shape>
+            </item>
+        </selector>
+    </item>
+
+</layer-list>

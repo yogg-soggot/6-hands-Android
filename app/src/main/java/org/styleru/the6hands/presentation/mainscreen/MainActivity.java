@@ -44,6 +44,8 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             return mainPresenter.onNavClicked(item.getItemId());
         }
+
+
     };
 
     @ProvidePresenter
@@ -58,7 +60,7 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        bottomNavigationView.setSelectedItemId(R.id.nav_profile);
+        if (savedInstanceState == null) bottomNavigationView.setSelectedItemId(R.id.nav_profile);
     }
 
     @Override

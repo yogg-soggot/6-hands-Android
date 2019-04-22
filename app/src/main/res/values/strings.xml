@@ -5,6 +5,7 @@
     <string name="title">Six Hands</string>
     <string name="description">Сервис для безопасной сдачи и аренды недвижимости</string>
     <string name="vk_button">Войти с помощью Вконтакте</string>
+    <string name="skip_auth">Пропустить</string>
 
 
     <!--activity_main-->
@@ -17,11 +18,15 @@
     <string name="change_data">Изменить данные</string>
     <string name="nav_dialog_title">Связь</string>
     <string name="unauthorized_name">Anonymous</string>
+    <string name="edit">Редактировать</string>
+    <string name="views">Просмотров:</string>
+    <string name="new_views">Новых:</string>
+    <!--fragment apartment-->
     <string name="toolbar_add_to_fav_title">Добавить в избранное</string>
     <string name="apartment_content_description">Изображение квартиры</string>
     <string name="apartment_owner">Хозяин</string>
     <string name="apartment_about">Об этом жилье</string>
-    <string name="apartment_show_full">Показать полностью...</string>
+    <string name="apartment_show_full">Показать полностью…</string>
     <string name="apartment_facilities">Удобства</string>
     <string name="facility_refrigerator">Холодильник</string>
     <string name="facility_pets_allowed">Можно с животными</string>
@@ -29,6 +34,4 @@
     <string name="facility_parking">Бесплатная Парковка</string>
     <string name="facility_air_conditioning">Кондиционер</string>
     <string name="button_rent">Cнять квартиру</string>
-
-
 </resources>
