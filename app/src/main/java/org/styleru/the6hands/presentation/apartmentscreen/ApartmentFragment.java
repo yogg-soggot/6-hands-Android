@@ -1,26 +1,26 @@
 package org.styleru.the6hands.presentation.apartmentscreen;
 
-import android.animation.ObjectAnimator;
+
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Spannable;
-import android.text.TextUtils;
-import android.text.style.ClickableSpan;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -41,6 +41,12 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
 
     @BindView(R.id.toolbar_apartment)
     Toolbar toolbar;
+
+    @BindView(R.id.toolbar_layout_apartment)
+    CollapsingToolbarLayout collapsingToolbarLayout;
+
+    @BindView(R.id.apartment_image)
+    ImageView apartmentImage;
 
     @BindView(R.id.subway_line_color)
     View subwayColor;
@@ -82,6 +88,15 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
         View view = inflater.inflate(R.layout.fragment_apartment, container, false);
         ButterKnife.bind(this, view);
 
+        //Toolbar
+        ((AppCompatActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(toolbar);
+        Objects.requireNonNull(((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        collapsingToolbarLayout.setTitleEnabled(false);
+
+
+
+
 
         return view;
     }
@@ -101,9 +116,10 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //Toolbar
-        ((AppCompatActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(toolbar);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
 
         presenter.onViewCreated();
         // TODO: 21.04.2019 Extract all strings to resources
