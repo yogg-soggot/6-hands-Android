@@ -21,4 +21,19 @@
     <string name="edit">Редактировать</string>
     <string name="views">Просмотров:</string>
     <string name="new_views">Новых:</string>
+
+    <!--fragment apartment-->
+    <string name="toolbar_add_to_fav_title">Добавить в избранное</string>
+    <string name="apartment_content_description">Изображение квартиры</string>
+    <string name="apartment_owner">Хозяин</string>
+    <string name="apartment_about">Об этом жилье</string>
+    <string name="apartment_show_full">Показать полностью…</string>
+    <string name="apartment_facilities">Удобства</string>
+    <string name="facility_refrigerator">Холодильник</string>
+    <string name="facility_pets_allowed">Можно с животными</string>
+    <string name="facility_wifi">Wi-Fi</string>
+    <string name="facility_parking">Бесплатная Парковка</string>
+    <string name="facility_air_conditioning">Кондиционер</string>
+    <string name="button_rent">Cнять квартиру</string>
+  
 </resources>
