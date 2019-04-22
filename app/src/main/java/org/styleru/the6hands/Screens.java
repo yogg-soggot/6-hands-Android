@@ -52,6 +52,7 @@ public class Screens {
             ApartmentFragment apartmentFragment = new ApartmentFragment();
 //            apartmentFragment.setArguments(bundle);
             return apartmentFragment;
+
         }
     }
 }

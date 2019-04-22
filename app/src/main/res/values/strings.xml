@@ -21,6 +21,7 @@
     <string name="edit">Редактировать</string>
     <string name="views">Просмотров:</string>
     <string name="new_views">Новых:</string>
+
     <!--fragment apartment-->
     <string name="toolbar_add_to_fav_title">Добавить в избранное</string>
     <string name="apartment_content_description">Изображение квартиры</string>
@@ -34,4 +35,5 @@
     <string name="facility_parking">Бесплатная Парковка</string>
     <string name="facility_air_conditioning">Кондиционер</string>
     <string name="button_rent">Cнять квартиру</string>
+  
 </resources>
