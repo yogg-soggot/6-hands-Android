@@ -1,24 +1,26 @@
 package org.styleru.the6hands.presentation.apartmentscreen;
 
-import android.animation.ObjectAnimator;
+
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Spannable;
-import android.text.TextUtils;
-import android.text.style.ClickableSpan;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -40,6 +42,12 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
     @BindView(R.id.toolbar_apartment)
     Toolbar toolbar;
 
+    @BindView(R.id.toolbar_layout_apartment)
+    CollapsingToolbarLayout collapsingToolbarLayout;
+
+    @BindView(R.id.apartment_image)
+    ImageView apartmentImage;
+
     @BindView(R.id.subway_line_color)
     View subwayColor;
 
@@ -49,9 +57,24 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
     @BindView(R.id.full_please)
     TextView fullPlease;
 
+    @BindView(R.id.facility_refrigerator)
+    LinearLayout refrigerator;
+
+    @BindView(R.id.facility_pets)
+    LinearLayout petsx;
+
+    @BindView(R.id.facility_wifi)
+    LinearLayout wifix;
+
+    @BindView(R.id.facility_parking)
+    LinearLayout parkingx;
+
+    @BindView(R.id.facility_air_conditioning)
+    LinearLayout conditioningx;
+
+
     boolean needToExpand = false;
 
-    private ObjectAnimator animation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,39 +88,41 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
         View view = inflater.inflate(R.layout.fragment_apartment, container, false);
         ButterKnife.bind(this, view);
 
+        //Toolbar
+        ((AppCompatActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(toolbar);
+        Objects.requireNonNull(((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        collapsingToolbarLayout.setTitleEnabled(false);
+
+
+
+
 
         return view;
+    }
+
+    //This method is used when user clicks on toolbar menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == R.id.action_add_to_favourites){
+            // TODO: 21.04.2019 Place your action on click favourites in toolbar
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //Toolbar
-        ((AppCompatActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(toolbar);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        //Use this when u need to change color of subway line before station name
-        //All colors are in resources, u don't need to choose them manually
-        subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro1_sokolnicheskaya)));
-
-        String copyPasta = "Блять, да мне похуй на тебя, блять, слушай, какая у тебя там тачка, блять, квартиры, срачки там блять, яхты, всё, мне похуй, хоть там \"Бэнтли\", хоть блять нахуй \"Майбах\", хоть \"Роллс-Ройс\", хоть \"Бугатти\" блять, хоть стометровая яхта, мне на это насрать, понимаешь? Сколько ты там, кого ебешь, каких баб, каких значит вот этих самок шикарных или атласных, блять в космос ты летишь, мне на это насрать, понимаешь? Я, блять, в своем познании настолько преисполнился, что я как будто бы уже сто триллионов миллиардов лет, блять, проживаю на триллионах и триллионах таких же планет, как эта Земля, мне этот мир абсолютно понятен, и я здесь ищу только одного, блять, - покоя, умиротворения и вот этой гармонии, от слияния с бесконечно вечным, от созерцания великого фрактального подобия и от вот этого замечательного всеединства существа, бесконечно вечного, куда ни посмотри, хоть вглубь - бесконечно малое, хоть ввысь - бесконечное большое, понимаешь? А ты мне опять со своим вот этим блять, иди суетись дальше, это твоё распределение, это твой путь и твой горизонт познания и ощущения твоей природы, он несоизмеримо мелок по сравнению с моим, понимаешь? Я как будто бы уже давно глубокий старец, бессмертный, ну или там уже почти бессмертный, который на этой планете от её самого зарождения, ещё когда только Солнце только-только сформировалось как звезда, и вот это газопылевое облако, вот, после взрыва, Солнца, когда оно вспыхнуло, как звезда, начало формировать вот эти коацерваты, планеты, понимаешь, я на этой Земле уже как будто почти пять миллиардов лет блять живу и знаю её вдоль и поперёк этот весь мир, а ты мне какие-то... мне похуй на твои тачки, на твои блять нахуй яхты, на твои квартиры, там, на твоё благо. Я был на этой планете бесконечным множеством, и круче Цезаря, и круче Гитлера, и круче всех великих, понимаешь, был, а где-то был конченым говном, ещё хуже, чем здесь. Я множество этих состояний чувствую. Где-то я был больше подобен растению, где-то я больше был подобен птице, там, червю, где-то был просто сгусток камня, это всё есть душа, понимаешь? Она имеет грани подобия совершенно многообразные, бесконечное множество. Но тебе этого не понять, поэтому ты езжай себе блять, мы в этом мире как бы живем разными ощущениями и разными стремлениями, соответственно, разное наше и место, разное и наше распределение. Тебе я желаю все самые крутые тачки чтоб были у тебя, и все самые лучше самки чтобы раздвигали ноги перед тобой, чтобы раздвигали перед тобой щели, торый в умиротворении, покое, гармонии, благодати, в этом сокровенном блаженстве пребывает, вовлеченный во всё и во вся, понимаешь, вот и всё, в этом наша разница. Так что я иду любоваться мирозданием, а ты идёшь преисполняться в ГРАНЯХ каких-то, вот и вся разница, понимаешь, ты не зришь это вечное бесконечное, оно тебе не нужно. Ну зато ты, так сказать, более активен, как вот этот дятел долбящий, или муравей, который очень активен в своей стезе, поэтому давай, наши пути здесь, конечно, имеют грани подобия, потому что всё едино, но я-то тебя прекрасно понимаю, а вот ты меня - вряд ли, потому что я как бы тебя в себе содержу, всю твою природу, она составляет одну маленькую там песчиночку, от того что есть во мне, вот и всё, поэтому давай, ступай, езжай, а я пошел наслаждаться нахуй блять прекрасным осенним закатом на берегу теплой южной реки. Всё, пиздуй-бороздуй, и я попиздил, нахуй.";
-
-        //Use this method to set text to expandable text view. Don't use setText instead
-        setApartmentDescription(copyPasta);
 
 
 
 
 
-
-
-
-
-
-
-
-
+        presenter.onViewCreated();
+        // TODO: 21.04.2019 Extract all strings to resources
 
     }
 
@@ -112,8 +137,7 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
     @OnClick({R.id.apartment_description,R.id.full_please})
     public void onDescriptionClicked(){
         if (needToExpand) {
-            animation = ObjectAnimator.ofInt(apartmentDescription, "maxLines", apartmentDescription.getLineCount());
-            animation.setDuration(200).start();
+            apartmentDescription.setMaxLines(Integer.MAX_VALUE);
             fullPlease.setVisibility(View.GONE);
             needToExpand = false;
         }
@@ -127,6 +151,52 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
             needToExpand = true;
             apartmentDescription.setMaxLines(4);
             fullPlease.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    public void setFacilities(boolean fridge, boolean pets, boolean wifi, boolean parking, boolean conditioning) {
+        if(fridge) refrigerator.setVisibility(View.VISIBLE);
+        if(pets) petsx.setVisibility(View.VISIBLE);
+        if(wifi) wifix.setVisibility(View.VISIBLE);
+        if(parking) parkingx.setVisibility(View.VISIBLE);
+        if(conditioning) conditioningx.setVisibility(View.VISIBLE);
+    }
+
+
+    //Use this when u need to change color of subway line before station name
+    //All colors are in resources, u don't need to choose them manually
+    //Use 0 if there's no metro
+    @Override
+    public void setSubwayLine(int subwayLine) {
+        switch (subwayLine) {
+            case 0: subwayColor.setVisibility(View.GONE); // TODO: 21.04.2019 make all cities with metro support
+                break;
+            case 1: subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro1_sokolnicheskaya)));
+                break;
+            case 2: subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro2_zamoskvoretskaya)));
+                break;
+            case 3: subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro3_arbatsko_pokrovskaya)));
+                break;
+            case 4: subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro4_filyovskaya)));
+                break;
+            case 5: subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro5_koltsevaya)));
+                break;
+            case 6: subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro6_kaluzhsko_rizhskaya)));
+                break;
+            case 7: subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro7_tagansko_krasnopresnenskaya)));
+                break;
+            case 8: subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro8_kalininskaya)));
+                break;
+            case 9: subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro9_serpuhobsko_temiryazebskaya)));
+                break;
+            case 10: subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro10_lyublinskaya)));
+                break;
+            case 11: subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro11_kahovskaya)));
+                break;
+            case 12: subwayColor.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.metro12_butovskaya)));
+                break;
+            default: throw new IllegalArgumentException("Pick one of 12 moscow metro lines");
         }
     }
 }
