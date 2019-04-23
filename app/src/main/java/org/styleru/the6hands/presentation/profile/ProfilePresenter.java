@@ -35,7 +35,7 @@ public class ProfilePresenter extends MvpPresenter<ProfileView> {
     }
 
     void onMyApartmentClicked(Apartment apartment){
-
+        router.navigateTo(new Screens.ApartmentScreen());
     }
 
     @Override
