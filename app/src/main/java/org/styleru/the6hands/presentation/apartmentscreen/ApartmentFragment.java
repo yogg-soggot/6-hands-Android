@@ -24,8 +24,10 @@ import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
 
+import org.parceler.Parcels;
 import org.styleru.the6hands.R;
 import org.styleru.the6hands.SixHandsApplication;
+import org.styleru.the6hands.domain.entities.Apartment;
 
 import java.util.Objects;
 
@@ -38,6 +40,8 @@ import butterknife.OnClick;
 
 public class ApartmentFragment extends MvpAppCompatFragment implements ApartmentView {
 
+    private static final String APARTMENT_KEY = "apartment";
+
     @Inject
     @InjectPresenter
     ApartmentPresenter presenter;
@@ -47,6 +51,9 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
 
     @BindView(R.id.toolbar_layout_apartment)
     CollapsingToolbarLayout collapsingToolbarLayout;
+
+    @BindView(R.id.apartment_address)
+    TextView appartmentAddress;
 
     @BindView(R.id.apartment_image)
     ImageView apartmentImage;
@@ -95,16 +102,21 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
         View view = inflater.inflate(R.layout.fragment_apartment, container, false);
         ButterKnife.bind(this, view);
 
-        //Toolbar
+        // Toolbar
         ((AppCompatActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(toolbar);
         Objects.requireNonNull(((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         Objects.requireNonNull(((AppCompatActivity) getActivity()).getSupportActionBar()).setDisplayShowTitleEnabled(false);
         setHasOptionsMenu(true);
         collapsingToolbarLayout.setTitleEnabled(false);
+
+        // init all fields
+        Apartment apartment = Parcels.unwrap(getArguments().getParcelable(APARTMENT_KEY));
+        appartmentAddress.setText(apartment.getAddress());
+
         return view;
     }
 
-    //This method is used when user clicks on toolbar menu
+    // This method is used when user clicks on toolbar menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
@@ -189,5 +201,13 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
                 break;
             default: throw new IllegalArgumentException("Pick one of 12 moscow metro lines");
         }
+    }
+
+    public static ApartmentFragment getInstance(Apartment apartment){
+        ApartmentFragment apartmentFragment = new ApartmentFragment();
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(APARTMENT_KEY, Parcels.wrap(apartment));
+        apartmentFragment.setArguments(bundle);
+        return apartmentFragment;
     }
 }

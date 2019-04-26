@@ -39,7 +39,11 @@ public class UserRepository implements IUserRepository {
 //        return sixHandsApi.getUserApartments(userId)
 //                .subscribeOn(Schedulers.io())
 //                .observeOn(AndroidSchedulers.mainThread());
-        return Maybe.just(Arrays.asList(new Apartment(), new Apartment(), new Apartment()))
+        Apartment a1 = new Apartment(), a2 = new Apartment(), a3 = new Apartment();
+        a1.setAddress("Произошел переход на фрагмент");
+        a2.setAddress("Улица Пушкина дом Колотушкина");
+        a3.setAddress("Тебе еще не надоело");
+        return Maybe.just(Arrays.asList(a1, a2, a3))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

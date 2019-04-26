@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 
+import org.styleru.the6hands.domain.entities.Apartment;
 import org.styleru.the6hands.presentation.apartmentscreen.ApartmentFragment;
 import org.styleru.the6hands.presentation.authscreen.AuthActivity;
 import org.styleru.the6hands.presentation.mainscreen.MainActivity;
@@ -46,13 +47,15 @@ public class Screens {
     }
 
     public static final class ApartmentScreen extends SupportAppScreen {
+        private Apartment apartment;
+
+        public ApartmentScreen(Apartment apartment) {
+            this.apartment = apartment;
+        }
+
         @Override
         public Fragment getFragment() {
-//            Bundle bundle = new Bundle();
-            ApartmentFragment apartmentFragment = new ApartmentFragment();
-//            apartmentFragment.setArguments(bundle);
-            return apartmentFragment;
-
+            return ApartmentFragment.getInstance(apartment);
         }
     }
 }
