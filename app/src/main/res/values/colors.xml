@@ -13,31 +13,22 @@
     <color name="shadow_color">#3d000000</color>
     <color name="vk_back_color">#517298</color>
     <color name="vk_divider_color">#435f7e</color>
-    <color name="vk_pressed_color">#2D3A506B</color>
+    <color name="pressed_color">#2D3A506B</color>
     <color name="skip_auth_color">#8affffff</color>
     <color name="skip_auth_color_pressed">#8A8D8D8D</color>
     
-    <!-- item_profile -->
+    <!-- fragment_profile -->
     <color name="profile_text_color">#b3000000</color>
     <color name="profile_pressed_text_color">#7A000000</color>
+    <color name="facebook_button_color">#3b5998</color>
+    <color name="profile_text_color_light">#fefefe</color>
+
     <!-- item my_apartment -->
     <color name="apartment_card_background">#ffffcc</color>
     <color name="edit_text_color">#ffffff</color>
     <color name="edit_text_pressed_color">#A7A7A7</color>
     <color name="new_views_color">#55c5b7</color>
 
-    <!--fragment_apartment-->
-    <color name="metro1_sokolnicheskaya">#EB1B35</color>
-    <color name="metro2_zamoskvoretskaya">#44B85C</color>
-    <color name="metro3_arbatsko_pokrovskaya">#0078BF</color>
-    <color name="metro4_filyovskaya">#19C1F3</color>
-    <color name="metro5_koltsevaya">#894E35</color>
-    <color name="metro6_kaluzhsko_rizhskaya">#F58631</color>
-    <color name="metro7_tagansko_krasnopresnenskaya">#8E479C</color>
-    <color name="metro8_kalininskaya">#FFCB31</color>
-    <color name="metro9_serpuhobsko_temiryazebskaya">#A1A2A3</color>
-    <color name="metro10_lyublinskaya">#B3D445</color>
-    <color name="metro11_kahovskaya">#79CDCD</color>
-    <color name="metro12_butovskaya">#ABBEFF</color>
+    <color name="gradient_start">#66000004</color>
   
 </resources>

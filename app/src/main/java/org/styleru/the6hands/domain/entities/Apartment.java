@@ -8,12 +8,28 @@ import java.util.List;
 public class Apartment {
 
     private long id, idUser, idFacility;
-    private String address;
+    private String address, description, color;
     private int numberOfRooms, numberOfMeters, livingSpace, kitchen, ceilingHeight, floor,
             numberOfFloorsInBuilding, numberOfBalconies, numberOfLoggias, price;
 
     private List<Facility> facilities;
     private List<Image> images;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 
     public long getId() {
         return id;

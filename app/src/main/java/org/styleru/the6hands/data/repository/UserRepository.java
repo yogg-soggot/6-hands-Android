@@ -8,7 +8,6 @@ import org.styleru.the6hands.domain.entities.Apartment;
 import org.styleru.the6hands.domain.entities.User;
 import org.styleru.the6hands.domain.repository.IUserRepository;
 
-import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -36,14 +35,7 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public Maybe<List<Apartment>> getUserApartments(long userId) {
-//        return sixHandsApi.getUserApartments(userId)
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread());
-        Apartment a1 = new Apartment(), a2 = new Apartment(), a3 = new Apartment();
-        a1.setAddress("Произошел переход на фрагмент");
-        a2.setAddress("Улица Пушкина дом Колотушкина");
-        a3.setAddress("Тебе еще не надоело");
-        return Maybe.just(Arrays.asList(a1, a2, a3))
+        return sixHandsApi.getUserApartments(userId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

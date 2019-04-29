@@ -39,7 +39,7 @@
 
             <item android:left="0.1dp" android:bottom="1.5dp" android:state_pressed="true">
                 <shape>
-                    <solid android:color="@color/vk_pressed_color" />
+                    <solid android:color="@color/pressed_color" />
                     <corners android:radius="2dp"/>
                 </shape>
             </item>

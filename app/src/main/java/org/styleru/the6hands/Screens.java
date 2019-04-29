@@ -13,11 +13,6 @@ import org.styleru.the6hands.presentation.profile.ProfileFragment;
 import ru.terrakok.cicerone.android.support.SupportAppScreen;
 
 public class Screens {
-    private static boolean isAnonUser = true;
-
-    public static boolean isAnonUser() {
-        return isAnonUser;
-    }
 
     public static final class AuthScreen extends SupportAppScreen {
         @Override
@@ -27,10 +22,6 @@ public class Screens {
     }
 
     public static final class MainScreen extends SupportAppScreen {
-
-        public MainScreen(boolean isAnonUser) {
-            Screens.isAnonUser = isAnonUser;
-        }
 
         @Override
         public Intent getActivityIntent(Context context) {

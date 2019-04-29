@@ -3,6 +3,7 @@ package org.styleru.the6hands.presentation.profile;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
+import com.vk.api.sdk.VK;
 
 import org.styleru.the6hands.Screens;
 import org.styleru.the6hands.domain.entities.Apartment;
@@ -41,7 +42,7 @@ public class ProfilePresenter extends MvpPresenter<ProfileView> {
     @Override
     protected void onFirstViewAttach() {
         super.onFirstViewAttach();
-        if (!Screens.isAnonUser()) {
+        if (VK.isLoggedIn()) {
             Disposable disposable = userInfoInteractor.getUserFromVk().subscribe(
                             user ->{
                                 this.user = user;

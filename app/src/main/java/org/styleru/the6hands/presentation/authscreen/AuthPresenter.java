@@ -24,7 +24,7 @@ public class AuthPresenter extends MvpPresenter<AuthView> {
     @Override
     protected void onFirstViewAttach() {
         if (VK.isLoggedIn()) {
-            router.newRootScreen(new Screens.MainScreen(false));
+            router.newRootScreen(new Screens.MainScreen());
         }
     }
 
@@ -33,11 +33,11 @@ public class AuthPresenter extends MvpPresenter<AuthView> {
     }
 
     void onClickSkipAuth(){
-        router.newRootScreen(new Screens.MainScreen(true));
+        router.newRootScreen(new Screens.MainScreen());
     }
 
     void onLogin(VKAccessToken token){
-        router.newRootScreen(new Screens.MainScreen(false));
+        router.newRootScreen(new Screens.MainScreen());
     }
 
     void onLoginFailed(){

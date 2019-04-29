@@ -1,6 +1,5 @@
 package org.styleru.the6hands.presentation.profile;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,13 +16,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.subjects.PublishSubject;
 
-public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.apartmentViewHolder> {
-    private Context context;
+public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.ApartmentViewHolder> {
     private PublishSubject<Apartment> onClickApartment;
     private List<Apartment> apartments;
 
-    ApartmentAdapter(Context context) {
-        this.context = context;
+    ApartmentAdapter() {
         apartments = new ArrayList<>();
         onClickApartment = PublishSubject.create();
     }
@@ -35,16 +32,16 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.apar
 
     @NonNull
     @Override
-    public ApartmentAdapter.apartmentViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+    public ApartmentViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         View vApartment = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.item_my_apartment,viewGroup,false);
 
-        return new apartmentViewHolder(vApartment);
+        return new ApartmentViewHolder(vApartment);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ApartmentAdapter.apartmentViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ApartmentViewHolder viewHolder, int i) {
         viewHolder.bind(apartments.get(i));
     }
 
@@ -57,10 +54,10 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.apar
         return apartments.size();
     }
 
-    class apartmentViewHolder extends RecyclerView.ViewHolder {
+    class ApartmentViewHolder extends RecyclerView.ViewHolder {
         private Apartment apartment;
 
-        apartmentViewHolder(@NonNull View itemView) {
+        ApartmentViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

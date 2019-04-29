@@ -31,6 +31,11 @@
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/trolling"/>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_background"/>
+
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar_apartment"
                 android:layout_width="match_parent"

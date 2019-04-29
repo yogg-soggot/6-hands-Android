@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">6 hands</string>
+    <string name="content_description">Image</string>
 
     <!-- activity_auth -->
     <string name="title">Six Hands</string>
@@ -8,19 +9,23 @@
     <string name="skip_auth">Пропустить</string>
 
 
-    <!--activity_main-->
-
+    <!-- activity_main-->
     <string name="nav_profile_title">Профиль</string>
     <string name="nav_list_title">Список</string>
     <string name="nav_map_title">Карта</string>
+    <string name="nav_dialog_title">Связь</string>
 
     <!-- fragment_profile -->
     <string name="change_data">Изменить данные</string>
-    <string name="nav_dialog_title">Связь</string>
     <string name="unauthorized_name">Anonymous</string>
+    <string name="plus_facebook">＋ Facebook</string>
+
+    <!-- item_my_apartment -->
     <string name="edit">Редактировать</string>
-    <string name="views">Просмотров:</string>
-    <string name="new_views">Новых:</string>
+    <string name="my_apartment_info">%s  •  %d комн.</string>
+    <string name="views">Просмотров: %d</string>
+    <string name="new_views">Новых: %d</string>
+
 
     <!--fragment apartment-->
     <string name="toolbar_add_to_fav_title">Добавить в избранное</string>
@@ -29,11 +34,6 @@
     <string name="apartment_about">Об этом жилье</string>
     <string name="apartment_show_full">Показать полностью…</string>
     <string name="apartment_facilities">Удобства</string>
-    <string name="facility_refrigerator">Холодильник</string>
-    <string name="facility_pets_allowed">Можно с животными</string>
-    <string name="facility_wifi">Wi-Fi</string>
-    <string name="facility_parking">Бесплатная Парковка</string>
-    <string name="facility_air_conditioning">Кондиционер</string>
-    <string name="button_rent">Cнять квартиру</string>
+    <string name="button_rent">СНЯТЬ КВАРТИРУ</string>
   
 </resources>
