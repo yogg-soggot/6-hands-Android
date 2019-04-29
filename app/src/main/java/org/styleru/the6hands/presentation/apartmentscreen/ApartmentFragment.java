@@ -110,7 +110,7 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
         Apartment apartment = Parcels.unwrap(getArguments().getParcelable(APARTMENT_KEY));
         appartmentAddress.setText(apartment.getAddress());
         subwayColor.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#EB1B35")));
-        setApartmentDescription("Description");
+        setApartmentDescription(apartment.getDescription());
         Glide.with(this)
                 .load(R.drawable.anon)
                 .apply(RequestOptions.circleCropTransform())
@@ -174,4 +174,6 @@ public class ApartmentFragment extends MvpAppCompatFragment implements Apartment
         apartmentFragment.setArguments(bundle);
         return apartmentFragment;
     }
+
+
 }

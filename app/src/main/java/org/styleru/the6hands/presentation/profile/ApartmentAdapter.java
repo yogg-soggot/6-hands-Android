@@ -67,7 +67,7 @@ public class ApartmentAdapter extends RecyclerView.Adapter<ApartmentAdapter.Apar
 
         }
 
-        @OnClick(R.id.my_apartment_card)
+        @OnClick(R.id.root)
         void onClickMyApartment(){
             onClickApartment.onNext(apartment);
         }

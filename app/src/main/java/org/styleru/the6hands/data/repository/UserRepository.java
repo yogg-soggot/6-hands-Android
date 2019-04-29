@@ -12,7 +12,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import io.reactivex.Maybe;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -34,7 +33,7 @@ public class UserRepository implements IUserRepository {
     }
 
     @Override
-    public Maybe<List<Apartment>> getUserApartments(long userId) {
+    public Single<List<Apartment>> getUserApartments(long userId) {
         return sixHandsApi.getUserApartments(userId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());

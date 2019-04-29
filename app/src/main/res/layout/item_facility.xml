@@ -22,9 +22,9 @@
         android:id="@+id/facility_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_light"
+        android:fontFamily="@font/lato_light_cyr"
         android:textColor="@android:color/black"
         android:textSize="16sp"
-        tools:text="Wi-Fi"/>
+        tools:text="Wi-Fi" />
 
 </LinearLayout>

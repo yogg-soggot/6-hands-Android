@@ -4,7 +4,7 @@ import org.styleru.the6hands.domain.entities.Apartment;
 
 import java.util.List;
 
-import io.reactivex.Maybe;
+import io.reactivex.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -12,5 +12,5 @@ public interface SixHandsApi {
     String BASE_URL = "http://localhost/api/";
 
     @GET("apartment")
-    Maybe<List<Apartment>> getUserApartments(@Query("userId") long userId);
+    Single<List<Apartment>> getUserApartments(@Query("userId") long userId);
 }

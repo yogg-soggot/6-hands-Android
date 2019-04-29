@@ -9,4 +9,6 @@ public interface ApartmentView extends MvpView {
     @StateStrategyType(SingleStateStrategy.class)
     void showMessage(String message);
 
+
+
 }

@@ -20,7 +20,6 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.vk.api.sdk.VK;
 
 import org.styleru.the6hands.R;
 import org.styleru.the6hands.SixHandsApplication;
@@ -80,17 +79,7 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileView
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this, view);
-        if (!VK.isLoggedIn()) {
-            addApartmentBtn.hide();
-            changeProfileData.setVisibility(View.INVISIBLE);
-            vkButton.setVisibility(View.INVISIBLE);
-            Glide.with(this)
-                    .load(R.drawable.anon)
-                    .apply(RequestOptions.circleCropTransform())
-                    .into(profilePic);
-            return view;
 
-        }
 
         apartmentAdapter = new ApartmentAdapter();
         disposable = apartmentAdapter.getOnClickApartment()
@@ -112,11 +101,21 @@ public class ProfileFragment extends MvpAppCompatFragment implements ProfileView
 
     @Override
     public void setUser(User user) {
-        profileName.setText(user.getFirstName());
-        Glide.with(this)
-                .load(user.getPhoto200Url())
-                .apply(RequestOptions.circleCropTransform())
-                .into(profilePic);
+        if(user == null){
+            addApartmentBtn.hide();
+            changeProfileData.setVisibility(View.GONE);
+            vkButton.setVisibility(View.GONE);
+            Glide.with(this)
+                    .load(R.drawable.anon)
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(profilePic);
+        } else {
+            profileName.setText(user.getFirstName());
+            Glide.with(this)
+                    .load(user.getPhoto200Url())
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(profilePic);
+        }
     }
 
     @Override

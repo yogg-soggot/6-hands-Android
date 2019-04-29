@@ -6,11 +6,10 @@ import org.styleru.the6hands.domain.entities.User;
 
 import java.util.List;
 
-import io.reactivex.Maybe;
 import io.reactivex.Single;
 
 public interface IUserRepository {
 
     Single<User> getUserFromVk();
-    Maybe<List<Apartment>> getUserApartments(long userId);
+    Single<List<Apartment>> getUserApartments(long userId);
 }

@@ -7,7 +7,6 @@ import com.vk.api.sdk.VK;
 
 import org.styleru.the6hands.Screens;
 import org.styleru.the6hands.domain.entities.Apartment;
-import org.styleru.the6hands.domain.entities.User;
 import org.styleru.the6hands.domain.interactors.UserInfoInteractor;
 
 import javax.inject.Inject;
@@ -21,7 +20,7 @@ public class ProfilePresenter extends MvpPresenter<ProfileView> {
 
     private final UserInfoInteractor userInfoInteractor;
     private CompositeDisposable compositeDisposable;
-    private User user;
+    private long userId;
     private Router router;
 
     @Inject
@@ -32,7 +31,7 @@ public class ProfilePresenter extends MvpPresenter<ProfileView> {
     }
 
     void onVkButtonClicked(){
-        getViewState().openLink(String.format("http://vk.com/id%s", user.getId()));
+        getViewState().openLink(String.format("http://vk.com/id%s", userId));
     }
 
     void onMyApartmentClicked(Apartment apartment){
@@ -45,17 +44,22 @@ public class ProfilePresenter extends MvpPresenter<ProfileView> {
         if (VK.isLoggedIn()) {
             Disposable disposable = userInfoInteractor.getUserFromVk().subscribe(
                             user ->{
-                                this.user = user;
+                                this.userId = user.getId();
                                 getViewState().setUser(user);
                                 loadApartments();
                             },
                             e -> getViewState().showMessage(e.getMessage()));
             compositeDisposable.add(disposable);
+        } else {
+            getViewState().setUser(null);
+            loadApartments();
         }
+
+
     }
 
     private void loadApartments(){
-        Disposable disposable = userInfoInteractor.getUserApartments(user.getId())
+        Disposable disposable = userInfoInteractor.getUserApartments(userId)
                 .subscribe(apartments -> getViewState().setApartments(apartments),
                         error -> getViewState().showMessage(error.getMessage()));
         compositeDisposable.add(disposable);
